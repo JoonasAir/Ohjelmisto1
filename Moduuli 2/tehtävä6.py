@@ -1,10 +1,19 @@
 import random
 
-kolme = ([random.randint (0, 9) for i in range (3)])
-nelja = ([random.randint (1, 6) for i in range (4)])
+kolme1 = random.randint(0,9)
+kolme2 = random.randint(0, 9)
+kolme3 = random.randint(0, 9)
+nelja1 = random.randint(1, 6)
+nelja2 = random.randint(1, 6)
+nelja3 = random.randint(1, 6)
+nelja4 = random.randint(1, 6)
 
-print("Numerolukon kolmenumeroinen koodin on: ", *kolme)
-print("Numerolukon nelinumeroinen koodi on: ", *nelja)
+print(f"Numerolukon kolminumeroinen koodi on: {kolme1}, {kolme2}, {kolme3}")
+print(f"Numerolukon nelinumeroinen koodin on: {nelja1}, {nelja2}, {nelja3}, {nelja4}")
+
+
+
+
 
     
 
