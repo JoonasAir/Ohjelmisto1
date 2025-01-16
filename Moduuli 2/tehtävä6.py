@@ -1,6 +1,6 @@
 import random
 
-kolme1 = random.randint(0,9)
+kolme1 = random.randint(0, 9)
 kolme2 = random.randint(0, 9)
 kolme3 = random.randint(0, 9)
 nelja1 = random.randint(1, 6)
