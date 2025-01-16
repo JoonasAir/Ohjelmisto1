@@ -1,3 +1,3 @@
 nimi = input("Kerro nimesi?: ")
 
-print("Terve, " + nimi +"!")
+print(f"Moi {nimi}, wassup?")
