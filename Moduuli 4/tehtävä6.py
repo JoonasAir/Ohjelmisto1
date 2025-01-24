@@ -12,7 +12,7 @@ while i < N:
     i += 1
 
 lasku = 4*n/N
-print(lasku)    
+print(f"Piin likiarvo on noin {lasku}")    
 
 
 
