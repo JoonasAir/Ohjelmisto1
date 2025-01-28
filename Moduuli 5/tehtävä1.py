@@ -1,16 +1,9 @@
 import random
 
-maarat = []
-i = 0
+n = int(input("Kuinka monta arpakuutiota heitetään?: "))
+
 summa = 0
-maara = int(input("Anna arpakuutioiden määrä: "))
+for i in range(n):
+    summa += random.randint(1, 6) 
 
-while i < maara:
-    noppa = random.randint(1, 6)
-    maarat.append(noppa)
-    i += 1
-   
-for tulos in maarat:
-    summa = summa + tulos
-
-print(f"Arpakuutioiden silmälukujen summa oli {summa}")    
+print(f"{n} arpakuution heittojen summa on {summa}.")  
