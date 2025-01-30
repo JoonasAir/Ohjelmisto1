@@ -9,4 +9,4 @@ kluvut = [1, 2, 3, 4, 5, 6]
 
 l = luvut(kluvut)
 
-print(l)
+print(f"Lista parittomista luvuista: {l}")
