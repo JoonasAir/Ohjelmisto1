@@ -2,23 +2,15 @@
 #joka on muuten samanlainen kuin parametrina saatu lista paitsi että siitä on karsittu pois kaikki parittomat luvut. 
 #Kirjoita testausta varten pääohjelma, jossa luot listan, kutsut funktiota ja tulostat sen jälkeen sekä alkuperäisen että karsitun listan.
 
+def luvut(x):
+    parittomat = []
+    for i in x:
+        if i % 2 != 0:
+            parittomat.append(i)
+    return parittomat
 
 kluvut = [1, 2, 3, 4, 5, 6]
 
-parittomat = []
-
-
-def luvut(x):
-    for i in x:
-        if i % 2 == 0:
-            parittomat.append(i)
-        else:
-            print(parittomat)
-
-l = luvut(parittomat)
+l = luvut(kluvut)
 
 print(l)
-
-
-
-
