@@ -8,4 +8,4 @@ while luku != "":
 
 luvut.sort(reverse=True)
 
-print(luvut[1:6])
+print(luvut[0:5])
