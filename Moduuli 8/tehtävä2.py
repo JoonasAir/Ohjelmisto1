@@ -10,7 +10,7 @@ def maakoodiHaku(a):
     if tulos: #Toistetaan koodilohko jos maakoodi löytyy
         taulukko = PrettyTable(["TYPE", "NUMBER"]) #Luodaan taulukko haetuille tiedoille otsikoilla Type ja Number
         for i in tulos:
-            type, number = i #puretaan saatu tuple kahteen osaan
+            type, number = i #puretaan saadut tiedot kahteen osaan
             taulukko.add_row([type, number]) #Lisätään taulukkoon riveittään muuttujat type ja number
             taulukko.add_divider() #Jaotellaan rivit viivalla
         print(taulukko)
