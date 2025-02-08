@@ -22,13 +22,11 @@ yhteys = mysql.connector.connect(
          port= 3306,
          database='flight_game',
          user='joonas',
-         password='sqlpassu',
+         password='',
          charset="utf8mb4",
          collation="utf8mb4_unicode_ci",
          autocommit=True
          )
 
 maakoodi = input("Syötä maakoodi: ").strip().upper()
-tulos = maakoodiHaku(maakoodi)
-
-
+maakoodiHaku(maakoodi)
