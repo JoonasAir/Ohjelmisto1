@@ -1,24 +1,21 @@
-#Kirjoita ohjelma, joka kysyy käyttäjältä lentoaseman ICAO-koodin. Ohjelma hakee ja tulostaa koodia vastaavan lentokentän nimen ja 
-#sen sijaintikunnan kurssilla käytettävästä lentokenttätietokannasta. 
-#ICAO-koodi on tallennettuna airport-taulun ident-sarakkeeseen.
-
 import mysql.connector
+from prettytable import PrettyTable #Käytetään prettytable kirjastoa tulostukseen taulukon muodossa
 
-def maakoodiHaku(maakoodi):
-    sql = f"SELECT type, COUNT(*) FROM airport WHERE iso_country = '{maakoodi}' GROUP BY type"
+def maakoodiHaku(a):
+    sql = f"SELECT type, COUNT(*) FROM airport WHERE iso_country = '{a}' GROUP BY type"
     #print(sql)
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchall()
-    print(tulos)
-    if tulos:
-        for rivi in tulos:
-            type, maara = rivi #puretaan saatu rivi kahteen osaan
-            print(type, maara)
-    else:
-        print("Ei tietoja")
-
-
+    if tulos: #Toistetaan koodilohko jos maakoodi löytyy
+        taulukko = PrettyTable(["TYPE", "NUMBER"]) #Luodaan taulukko haetuille tiedoille otsikoilla Type ja Number
+        for i in tulos:
+            type, number = i #puretaan saatu tuple kahteen osaan
+            taulukko.add_row([type, number]) #Lisätään taulukkoon riveittään muuttujat type ja number
+            taulukko.add_divider() #Jaotellaan rivit viivalla
+        print(taulukko)
+    else:                      #Ajetaan tämä tuloste jos maakoodia ei löytynyt
+        print(f"Ei löytynyt tulosta maakoodille {maakoodi}")
 
 yhteys = mysql.connector.connect(
          host='127.0.0.1', #"localhost" käy myös
@@ -32,4 +29,6 @@ yhteys = mysql.connector.connect(
          )
 
 maakoodi = input("Syötä maakoodi: ").strip().upper()
-maakoodiHaku(maakoodi)
+tulos = maakoodiHaku(maakoodi)
+
+
